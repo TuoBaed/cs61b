@@ -41,33 +41,35 @@ public class NBody {
         double radius = NBody.readRadius(path);
         Planet[] ps = NBody.readPlanets(path);
 
-        
         StdDraw.setScale(-radius, radius);
-        StdDraw.clear();
+        
+        StdDraw.enableDoubleBuffering();
+        double time = 0;
+        for (; time < T; time += dt) {
+            double[] xForces = new double[ps.length];
+            double[] yForces = new double[ps.length];
+            for (int i = 0; i < ps.length; i++) {
+                xForces[i] = ps[i].calcNetForceExertedByX(ps);
+                yForces[i] = ps[i].calcNetForceExertedByY(ps);
+                ps[i].update(dt, xForces[i], yForces[i]);
 
-        StdDraw.picture(0, 0, background);
+            }
 
-        for (int i = 0; i < ps.length; i++) {
-            StdDraw.picture(ps[i].xxPos, ps[i].yyPos, "images/" + ps[i].imgFileName);
+            StdDraw.clear();
+            StdDraw.picture(0, 0, background);
+            for (int i = 0; i < ps.length; i++) {
+                StdDraw.picture(ps[i].xxPos, ps[i].yyPos, "images/" + ps[i].imgFileName);
+            }
+            StdDraw.show();
+            StdDraw.pause(10);
         }
 
-        StdDraw.show();
-        StdDraw.pause(2000);
-        
-        // String imageToDraw = "examples/advice.png";
-
-        // StdDraw.setScale(-100, 100);
-
-        /* Clears the drawing window. */
-        // StdDraw.clear();
-
-        /* Stamps three copies of advice.png in a triangular pattern. */
-        // StdDraw.picture(0, 75, background);
-        // StdDraw.picture(-75, -75, background);
-        // StdDraw.picture(75, -75, imageToDraw);
-
-        /* Shows the drawing to the screen, and waits 2000 milliseconds. */
-        // StdDraw.show();
-        // StdDraw.pause(2000);
+        StdOut.printf("%d\n", ps.length);
+        StdOut.printf("%.2e\n", radius);
+        for (int i = 0; i < ps.length; i++) {
+            StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+                            ps[i].xxPos, ps[i].yyPos, ps[i].xxVel,
+                            ps[i].yyVel, ps[i].mass, ps[i].imgFileName);   
+        }
     }
 }
