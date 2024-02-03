@@ -6,7 +6,7 @@ public class Planet {
     public double mass;
     public String imgFileName;
 
-    static final double GC = 6.67e-11;
+    private static final double GC = 6.67e-11;
 
     public Planet(double xxPos, double yyPos, double xxVel, double yyVel, double mass, String imgFileName) {
         this.xxPos = xxPos;
@@ -43,7 +43,7 @@ public class Planet {
         return this.calcForceExertedBy(p) * (p.yyPos - this.yyPos) / this.calcDistance(p);
     }
 
-    public boolean equals(Planet p) {
+    private boolean equals(Planet p) {
         return this == p;
     }
 
@@ -75,5 +75,9 @@ public class Planet {
 
         this.xxPos += this.xxVel * dt;
         this.yyPos += this.yyVel * dt;
+    }
+
+    public void draw() {
+        StdDraw.picture(this.xxPos, this.yyPos, "images/" + this.imgFileName);
     }
 }
