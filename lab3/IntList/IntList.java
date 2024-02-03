@@ -115,14 +115,14 @@ public class IntList {
         return n.rest;
     }
 
-    public static void reverse(IntList A) {
+    public static IntList reverse(IntList A) {
         IntList head = A;
         IntList n = null;
         while (head != null) {
             n = new IntList(head.first, n);
             head = head.rest;
         }
-        A = n;
+        return n;
     }
 
 
