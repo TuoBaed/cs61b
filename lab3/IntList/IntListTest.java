@@ -75,8 +75,8 @@ public class IntListTest {
         IntList twoOne = new IntList(2, one);
         IntList threeTwoOne = new IntList(3, twoOne);
 
-        IntList x = IntList.of(3, 2, 1);
-        IntList.reverse(threeTwoOne);
+        IntList x = IntList.of(1, 2, 3);
+        threeTwoOne = IntList.reverse(threeTwoOne);
         assertEquals(threeTwoOne, x);
     }
 }
