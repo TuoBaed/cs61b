@@ -116,6 +116,7 @@ public class IntList {
     }
 
     public static IntList reverse(IntList A) {
+        /*
         IntList head = A;
         IntList n = null;
         while (head != null) {
@@ -123,6 +124,16 @@ public class IntList {
             head = head.rest;
         }
         return n;
+        */
+        if (A == null || A.rest == null) {
+            return A;
+        }
+        else {
+            IntList newhead = reverse(A.rest);
+            A.rest.rest = A;
+            A.rest = null;
+            return newhead;
+        }
     }
 
 
