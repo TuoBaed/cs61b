@@ -136,7 +136,7 @@ public class IntList {
         }
     }
 
-    public static IntList reverseIterive(IntList A) {
+    public static IntList reverseIterative(IntList A) {
         IntList prev = null;
         IntList next = null;
         while (A != null) {

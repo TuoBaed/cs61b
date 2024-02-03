@@ -76,7 +76,7 @@ public class IntListTest {
         IntList threeTwoOne = new IntList(3, twoOne);
 
         IntList x = IntList.of(1, 2, 3);
-        threeTwoOne = IntList.reverseIterive(threeTwoOne);
+        threeTwoOne = IntList.reverseIterative(threeTwoOne);
         assertEquals(threeTwoOne, x);
     }
 }
