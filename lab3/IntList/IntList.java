@@ -136,6 +136,21 @@ public class IntList {
         }
     }
 
+    public static IntList reverseIterive(IntList A) {
+        IntList prev = null;
+        IntList next = null;
+        while (A != null) {
+            // save present
+            next = A.rest;
+            // modify point direction
+            A.rest = prev;
+            // move to next
+            prev = A;
+            A = next;
+        }
+        return prev;
+    }
+
 
 
 
