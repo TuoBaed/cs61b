@@ -1,4 +1,5 @@
 
+
 public class ArrayDeque<T> implements Deque<T> {
     private T[] items;
     private int size;
@@ -16,7 +17,7 @@ public class ArrayDeque<T> implements Deque<T> {
 
 //    public boolean isEmpty() { return size == 0; }
 
-    public void resize(int newLength) {
+    private void resize(int newLength) {
         T[] newItems = (T[]) new Object[newLength];
 
         int start = (nextFirst + 1) % items.length;
