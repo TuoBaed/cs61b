@@ -20,9 +20,15 @@ public class Palindrome {
 
     public boolean isPalindrome(String word, CharacterComparator cc) {
         int length = word.length();
+        char front;
+        char tail;
         for (int i = 0; i < length / 2; i++) {
-            if (word.charAt(i) > 'z' || word.charAt(i) < 'A' ||
-                    (word.charAt(i) > 'Z' && word.charAt(i) < 'a')) {
+            front = word.charAt(i);
+            tail = word.charAt(length - i - 1);
+            if (front > 'z' || front < 'A' || (front > 'Z' && front < 'a')) {
+                return false;
+            }
+            if (tail > 'z' || tail < 'A' || (tail > 'Z' && tail < 'a')) {
                 return false;
             }
             if (!cc.equalChars(word.charAt(i), word.charAt(length - i - 1))) {
