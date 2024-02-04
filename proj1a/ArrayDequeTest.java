@@ -40,7 +40,8 @@ public class ArrayDequeTest {
     /** Adds an item, then removes an item, and ensures that dll is empty afterwards. */
     public void addRemoveTest() {
 
-        // System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
+        // System.out.println("Make sure to uncomment the
+        // lines below (and delete this print statement).");
 
         ArrayDeque<Integer> lld1 = new ArrayDeque<Integer>();
         // should be empty
@@ -59,7 +60,8 @@ public class ArrayDequeTest {
     /* Tests removing from an empty deque */
     public void removeEmptyTest() {
 
-        // System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
+        // System.out.println("Make sure to uncomment the lines below
+        // (and delete this print statement).");
 
         ArrayDeque<Integer> lld1 = new ArrayDeque<>();
         lld1.addFirst(3);
@@ -82,7 +84,8 @@ public class ArrayDequeTest {
     /* Tests removing from an empty deque */
     public void printDequeTest() {
 
-        // System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
+        // System.out.println("Make sure to uncomment the lines
+        // below (and delete this print statement).");
 
         ArrayDeque<String> ad1 = new ArrayDeque<>();
         ad1.addLast("a");
@@ -134,7 +137,8 @@ public class ArrayDequeTest {
     /* Tests removing from an empty deque */
     public void getitemTest() {
 
-        // System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
+        // System.out.println("Make sure to uncomment
+        // the lines below (and delete this print statement).");
 
         ArrayDeque<String> ad1 = new ArrayDeque<>();
         ad1.addFirst("a");
@@ -155,7 +159,8 @@ public class ArrayDequeTest {
     /* check if null is return when removing from an empty LinkedListDeque. */
     public void emptyNullReturnTest() {
 
-        // System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
+        // System.out.println("Make sure to uncomment
+        // the lines below (and delete this print statement).");
 
         ArrayDeque<Integer> lld1 = new ArrayDeque<Integer>();
 
@@ -169,7 +174,8 @@ public class ArrayDequeTest {
     /* Tests removing from an empty deque */
     public void removeTest() {
 
-        // System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
+        // System.out.println("Make sure to
+        // uncomment the lines below (and delete this print statement).");
 
         ArrayDeque<String> ad1 = new ArrayDeque<>();
         ad1.addLast("a");
